@@ -1,0 +1,128 @@
+clear,clc,
+disp('Temp=1')
+disp('Pressure=2')
+disp('vf=3')
+disp('vg=4')
+disp('uf=5')
+disp('ug=6')
+disp('hf=7')
+disp('hfg=8')
+disp('hg=9')
+disp('sf=10')
+disp('sfg=11')
+disp('sg=12')
+# Temp
+[Temp]=xlsread('H2OTempSat.xlsx','A4:A52');
+A=Temp;
+
+
+ #pressure
+[Pressure]=xlsread('H2OTempSat.xlsx','B4:B52');
+B=Pressure;
+
+   #volume 
+[vf]=xlsread('H2OTempSat.xlsx','C4:C52');
+C=vf;
+[vg]=xlsread('H2OTempSat.xlsx','D4:D52');
+D=vg;
+
+   #energy 
+[uf]=xlsread('H2OTempSat.xlsx','E4:E52');
+E=uf;
+[ug]=xlsread('H2OTempSat.xlsx','F4:F52');
+F=ug;
+
+   #enthalpy
+[hf]=xlsread('H2OTempSat.xlsx','G4:G52');
+G=hf;
+[hfg]=xlsread('H2OTempSat.xlsx','H4:H52');
+H=hfg;
+[hg]=xlsread('H2OTempSat.xlsx','I4:I52');
+I=hg;
+
+   #entropy 
+[sf]=xlsread('H2OTempSat.xlsx','J4:J52');
+J=sf;
+[sfg]=xlsread('H2OTempSat.xlsx','K4:K52');
+K=sfg;
+[sg]=xlsread('H2OTempSat.xlsx','L4:L52');
+L=sg;
+y=input ('choose the number of ur operation');
+
+if y==1
+  x=input('enter the Temp:'); 
+idx = find(Temp== x);
+[row,col] = ind2sub(size(Temp),idx) ;
+
+elseif y==2
+    x=input('enter the Pressure:'); 
+idx = find(Pressure== x);
+[row,col] = ind2sub(size(Pressure),idx) ;
+
+elseif y==3
+    x=input('enter the vf:'); 
+idx = find(vf== x);
+[row,col] = ind2sub(size(vf),idx) ;
+
+elseif y==4
+    x=input('enter the vg:'); 
+idx = find(vg== x);
+[row,col] = ind2sub(size(vg),idx) ;
+
+
+elseif y==5
+    x=input('enter the uf:'); 
+idx = find(uf== x);
+[row,col] = ind2sub(size(uf),idx) ;
+
+
+
+elseif y==6
+    x=input('enter the ug:'); 
+idx = find(ug== x);
+[row,col] = ind2sub(size(ug),idx) ;
+
+
+
+elseif y==7
+    x=input('enter the hf:'); 
+idx = find(hf== x);
+[row,col] = ind2sub(size(hf),idx) ;
+
+
+
+elseif y==8
+    x=input('enter the hfg:'); 
+idx = find(hfg== x);
+[row,col] = ind2sub(size(hfg),idx) ;
+
+
+
+elseif y==9
+    x=input('enter the hg:'); 
+idx = find(hg== x);
+[row,col] = ind2sub(size(hg),idx) ;
+
+elseif y==10
+    x=input('enter the sf:'); 
+idx = find(sf== x);
+[row,col] = ind2sub(size(sf),idx) ;
+
+elseif y==11
+    x=input('enter the sfg:'); 
+idx = find(sfg== x);
+[row,col] = ind2sub(size(sfg),idx) ;
+
+elseif y==12
+    x=input('enter the sg:'); 
+idx = find(sg== x);
+[row,col] = ind2sub(size(sg),idx) ;
+
+end
+fprintf('the temp is %f\n',A(row,col));
+fprintf('the pressure is %f\n',B(row,col));
+fprintf('the vf is %f\n,the vg is %f\n',C(row,col),D(row,col));
+fprintf('the uf is %f\n,the ug is %f\n',E(row,col),F(row,col)) ;
+fprintf('the hf is %f\n,the hfg is %f\n,the hg is %f\n',G(row,col),H(row,col),I(row,col));
+fprintf('the sf is %f\n,the sfg is %f\n,the sg is %f\n',J(row,col),K(row,col),L(row,col));
+
